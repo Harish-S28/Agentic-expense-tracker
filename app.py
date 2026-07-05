@@ -62,6 +62,13 @@ def init_db():
         conn.commit()
 
 
+# IMPORTANT: call init_db() here at import time (not just inside __main__),
+# so tables are created whether the app is run via "python app.py" locally
+# OR via gunicorn on Render (gunicorn imports this file, it never runs the
+# "if __name__ == '__main__'" block below).
+init_db()
+
+
 def _get_carry_over(conn, today: date, base_daily: float) -> float:
     """Calculate cumulative carry-over from day 1 of month to yesterday."""
     first_day = today.replace(day=1)
@@ -557,7 +564,6 @@ def _default_analysis(data):
 
 # ═══════════════════════════════════════════════════════
 if __name__ == '__main__':
-    init_db()
     port = int(os.environ.get('PORT', 5000))
     print(f'\n  Agentic Expense Tracker running on http://127.0.0.1:{port}\n')
     app.run(host='0.0.0.0', port=port, debug=False)
