@@ -1,57 +1,259 @@
-# SpendLog AI — Agentic Personal Expense Tracker
+# 💰 SpendLog AI – Agentic Personal Expense Tracker
 
-SpendLog AI is a next-generation personal expense tracker featuring an agentic financial assistant, daily limits, smart notifications, and automated report generators.
-
-## 🚀 Key Features
-
-1. **Daily reminders (2x/day)**: Automatically queries your transactions and pushes browser + toast alerts at 9:00 AM and 7:00 PM if no expenses have been recorded yet.
-2. **AI-driven advice per category**: Learns which food, transport, or health categories you spend most on, then provides diet tips, medical recommendations, and custom alerts.
-3. **Onboarding & Personas**: Dynamically personalizes prompts based on whether you are a **Student**, **Doctor**, **Business Person**, **Parent**, or **Employee**.
-4. **Dynamic Daily Limit**: Enter your monthly budget (e.g. ₹6000), and track your progress with daily limit calculations, savings bonuses carried over to next-day allowance, or overspending penalties.
-5. **AI Financial Analysis**: Deep financial review generator for months and years.
-6. **AI Chatbot**: Slide-up drawer chatbot preloaded with your local profiles and 30-day transaction summaries.
+An AI-powered expense tracking application that helps users manage their finances intelligently using **Google Gemini AI**. The application not only records daily expenses but also analyzes spending habits, provides personalized financial insights, recommends budgeting strategies, and answers finance-related questions through an AI chatbot.
 
 ---
 
-## 🛠️ Tech Stack
-- **Backend**: Python Flask
-- **Database**: SQLite3
-- **AI Core**: Google Gemini 1.5 Flash (Falls back automatically to rule-based logic if no API key is specified!)
-- **Frontend**: HTML5, Vanilla JavaScript, Custom CSS Variables (Premium Dark Mode Layout)
+## 🚀 Features
+
+### 📊 Expense Management
+
+* Add, edit, and delete expenses
+* Categorize expenses (Food, Travel, Shopping, Bills, Entertainment, etc.)
+* Track daily and monthly spending
+* View complete expense history
+
+### 💵 Smart Budget Planner
+
+* Set monthly budget
+* Automatic daily budget calculation
+* Carry-forward remaining budget to the next day
+* Real-time budget tracking
+
+### 🤖 AI Financial Assistant
+
+* Powered by **Google Gemini API**
+* Personalized financial advice
+* Spending pattern analysis
+* Budget improvement suggestions
+* Profession-based recommendations
+* Interactive AI chatbot for finance-related queries
+
+### 👤 Personalized User Profiles
+
+Supports multiple professions such as:
+
+* Student
+* Employee
+* Business Person
+* Doctor
+* Parent
+* Freelancer
+* Others
+
+The AI customizes recommendations based on the user's profession.
+
+### 📈 Financial Analytics
+
+* Total expenses overview
+* Category-wise spending
+* Monthly summaries
+* Smart financial insights
+* Budget utilization analysis
+
+### 🔄 Intelligent Fallback
+
+If the Gemini API is unavailable, the application automatically switches to a built-in rule-based AI system, ensuring uninterrupted functionality.
 
 ---
 
-## 💻 Local Installation
+# 🛠️ Tech Stack
 
-1. Make sure you have python installed.
-2. Navigate to the project directory:
-   ```bash
-   cd agentic-expense-tracker
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Copy `.env.example` to a new file named `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-5. *(Optional but recommended)* Get your free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey) and insert it into the `.env` file:
-   ```env
-   GEMINI_API_KEY=AIzaSy...
-   ```
-6. Launch the server:
-   ```bash
-   python app.py
-   ```
-7. Open **http://127.0.0.1:5000** in your browser!
+### Frontend
+
+* HTML5
+* CSS3
+* Vanilla JavaScript
+
+### Backend
+
+* Python
+* Flask
+
+### Database
+
+* SQLite
+
+### AI Integration
+
+* Google Gemini API
+* Rule-Based AI Engine (Fallback)
+
+### Deployment
+
+* Railway
+* Gunicorn
 
 ---
 
-## ☁️ Cloud Deployment (e.g. Railway)
+# 📂 Project Structure
 
-1. Create a new GitHub repository and push this folder.
-2. Link the repository to your [Railway](https://railway.app/) dashboard.
-3. In Railway **Variables**, add your:
-   - `GEMINI_API_KEY` (highly recommended for actual AI functionality)
-4. Deploy! The custom `Procfile` and `railway.toml` will automatically build the environment using python nixpacks and run it.
+```text
+Agentic-expense-tracker/
+│
+├── static/
+│   ├── css/
+│   └── js/
+│
+├── templates/
+│   └── index.html
+│
+├── app.py
+├── ai_agent.py
+├── requirements.txt
+├── Procfile
+├── railway.toml
+├── README.md
+└── database.db
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/Harish-S28/Agentic-expense-tracker.git
+```
+
+```bash
+cd Agentic-expense-tracker
+```
+
+---
+
+## Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Configure Gemini API
+
+Create a `.env` file in the project root.
+
+```env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
+
+If no API key is provided, the application automatically uses its built-in rule-based AI.
+
+---
+
+## Run the Application
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+# 📡 Application Workflow
+
+1. User creates a profile.
+2. User sets a monthly budget.
+3. User records daily expenses.
+4. Expenses are stored in SQLite.
+5. Dashboard updates analytics instantly.
+6. AI analyzes spending behavior.
+7. Personalized recommendations are generated.
+8. Users can interact with the AI chatbot for financial guidance.
+
+---
+
+# 🧠 AI Capabilities
+
+* Spending habit analysis
+* Budget optimization
+* Expense categorization
+* Personalized financial advice
+* Profession-aware recommendations
+* Smart budgeting tips
+* Financial question answering
+* Rule-based fallback intelligence
+
+---
+
+# 🎯 Future Enhancements
+
+* Voice-enabled AI assistant
+* Receipt OCR scanning
+* Bank account integration
+* UPI transaction import
+* Email expense summaries
+* Multi-user authentication
+* Cloud database support
+* Mobile application
+* Expense prediction using Machine Learning
+
+---
+
+# 📷 Screenshots
+
+Add screenshots of:
+
+* Dashboard
+* Expense Tracker
+* Budget Planner
+* AI Insights
+* AI Chatbot
+* Analytics Page
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Create a Pull Request
+
+---
+
+# 📄 License
+
+This project is developed for educational and learning purposes.
+
+---
+
+# 👨‍💻 Author
+
+**Harish**
+
+B.Tech – Artificial Intelligence & Data Science
+
+Passionate about AI, Agentic Systems, Machine Learning, Full Stack Development, and Intelligent Automation.
+
+---
+
+## ⭐ If you found this project useful, consider giving it a Star on GitHub!
