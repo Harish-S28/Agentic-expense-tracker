@@ -4,6 +4,10 @@ An AI-powered expense tracking application that helps users manage their finance
 
 ---
 
+## 🌐 Live Demo
+
+🚀 **Try the Live Demo:** [Agentic Expense Tracker](https://agentic-expense-tracker.onrender.com)
+
 ## 🚀 Features
 
 ### 📊 Expense Management
