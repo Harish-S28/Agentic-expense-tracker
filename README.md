@@ -75,6 +75,8 @@ Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your web browser.
 
 ### Deploying to Render (Ephemerality-Proof Database)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Harish-S28/Agentic-expense-tracker)
+
 Render web services use ephemeral disks, which delete local SQLite databases on container reboot. SpendLog AI solves this using a **Render Blueprint** that links your web app to a persistent cloud PostgreSQL database automatically.
 
 1. **Fork this repository** on GitHub.
