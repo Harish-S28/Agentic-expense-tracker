@@ -19,117 +19,218 @@ except ImportError:
 #  Knowledge Base — Category Tips
 # ─────────────────────────────────────────────────────────
 CATEGORY_TIPS = {
-    'food': {
+    'food & dining': {
         'high': [
-            "Your food spending is quite high! Try meal prepping on weekends — it cuts costs by 40-50% and saves daily cooking time.",
-            "Eating out frequently adds up fast. Follow the 80/20 rule: cook at home 80% of the time, eat out only for special occasions.",
-            "High food budget! Look for local tiffin services or mess options — nutritious and 60% cheaper than restaurants.",
-            "Consider buying groceries in bulk from wholesale stores — saves 15-20% monthly on your food bill."
+            "Your dining expenses are high! Cooking at home or using a local tiffin service can cut costs by 40-50% compared to restaurants.",
+            "Eating out frequently adds up fast. Try the 80/20 rule: cook 80% of the time, and reserve dining out for weekends."
         ],
         'normal': [
-            "Food expense tracked! Pro tip: planning weekly meals in advance helps avoid impulse food orders.",
-            "Good job! Cooking at home is both healthier AND more economical. Keep it balanced.",
-            "Balanced food spending! Seasonal vegetables and lentils give maximum nutrition at minimum cost."
+            "Dining expense tracked! Pre-planning weekly meals is both healthier and more economical.",
+            "Good job keeping your food bills balanced. Cooking at home is a great habit!"
         ],
         'diet_tips': [
             "🥗 Diet tip: Lentils, legumes & seasonal veggies are nutritious AND budget-friendly!",
-            "🥗 Intermittent fasting saves money on one meal while boosting health benefits.",
-            "🥗 Reducing packaged food saves money and improves your nutrition significantly.",
             "🥗 Batch cooking on Sundays saves both time and money through the week!"
         ],
-        'question': "Was this a restaurant meal, groceries, or food delivery?"
+        'question': "Was this a restaurant meal, food delivery, or cafe visit?"
     },
-    'transport': {
+    'groceries & household': {
         'high': [
-            "High transport costs! Monthly bus/metro passes are 25-30% cheaper than daily tickets.",
-            "Transport adding up? Carpooling through Quick Ride or similar apps splits costs 50-50.",
-            "For distances under 2km, walking or cycling is free AND great for your health!",
-            "Consider switching to monthly passes or pooling — significant savings over time."
+            "High grocery bill! Consider buying staples in bulk from wholesale stores — saves 15-20% monthly.",
+            "Stick to a weekly shopping list and avoid shopping on an empty stomach to prevent impulse purchases."
         ],
         'normal': [
-            "Transport logged! Planning routes in advance reduces fuel costs by 10-15%.",
-            "Combining multiple errands in one trip saves time and fuel — great habit!",
-            "Reasonable transport spend. Monthly passes usually offer 20-30% better value."
+            "Groceries logged! Keeping staples stocked at home prevents expensive last-minute food orders.",
+            "Balanced groceries spend. Buying seasonal produce is a smart way to save."
         ],
-        'question': "Was this for daily commute, outstation travel, or a special trip?"
+        'question': "Did you buy monthly staples, fresh veggies, or household cleaning supplies?"
     },
-    'health': {
+    'housing & rent': {
         'high': [
-            "Health expense noted. Do you have health insurance? A good policy covers 80-90% of hospitalization costs.",
-            "High medical spending — check government schemes like Ayushman Bharat which covers up to ₹5 lakh/year.",
-            "Your health is an investment! That said, preventive care (regular exercise, healthy diet) reduces long-term medical costs."
+            "Housing is a major fixed cost. If rent exceeds 35% of your income, consider roommate sharing or negotiating rent.",
+            "High housing expenses! Look for ways to lower utility bills or check for lower-rent options nearby."
         ],
         'normal': [
-            "Health expense recorded. Prevention is cheaper than cure — regular checkups go a long way!",
-            "Annual health checkup packages are often cheaper than individual diagnostic tests.",
-            "Smart health spending! Yoga, meditation, and regular walks are free habits that reduce future medical costs."
+            "Housing payment logged. Keeping this stable is the foundation of a solid monthly budget.",
+            "Rent/housing expense tracked. Fixed expenses are the easiest to budget around once set."
         ],
-        'question': "Was this a medicine purchase, consultation, diagnostic test, or gym/wellness?"
+        'question': "Is this rent, PG fee, maintenance fee, or society charges?"
     },
-    'bills': {
+    'utilities & bills': {
         'high': [
-            "High utility bills! Check for energy vampires — standby devices consume 5-10% electricity. Unplug them!",
-            "LED bulbs use 75% less energy than regular bulbs — a one-time investment that saves monthly.",
-            "Run heavy appliances during off-peak hours, fix water leaks, and compare service providers annually."
+            "High utilities! Check for phantom power draw — unplug devices on standby to save 5-10% electricity.",
+            "Compare mobile and internet providers annually. Better promotional rates are often available for the same service."
         ],
         'normal': [
-            "Bill paid on time — excellent financial habit! Consider auto-pay to never miss due dates.",
-            "Bill tracked! Tip: compare utility providers annually — better rates are often available.",
-            "Good bill management! Setting up reminders helps avoid costly late payment fees."
+            "Bill paid on time — excellent financial habit! Set up auto-pay to never miss due dates.",
+            "Good bill management! Prompt payment avoids expensive late fees."
         ],
-        'question': "Was this electricity, water, internet, mobile, or another utility bill?"
+        'question': "Was this electricity, water, gas, internet, or mobile recharge?"
     },
-    'shopping': {
+    'transportation & fuel': {
         'high': [
-            "Shopping spend is high! The 48-hour waiting rule: wait 2 days before any unplanned purchase — avoids 80% of impulse buys.",
-            "High shopping! Stick to a monthly shopping list and avoid browsing sale sections without intent.",
-            "Shopping adding up? The 'one in, one out' rule: for every new item, donate or sell one existing one."
+            "High transport costs! Monthly transit passes or carpooling can split commute costs in half.",
+            "Fuel costs adding up? Combine multiple errands into one trip and maintain proper tire pressure for better mileage."
         ],
         'normal': [
-            "Shopping tracked! Sign up for cashback apps and credit card rewards to get money back on purchases.",
-            "Reasonable shopping. Remember: a sale is only a deal if you actually needed the item!",
-            "Smart tip: buy off-season items at a discount (winter clothes in summer and vice versa)."
+            "Commute expense logged. Public transit is a great way to save money and reduce carbon footprint.",
+            "Transport tracked. Errand planning and routes optimization save fuel over time."
         ],
-        'question': "Was this clothing, electronics, household items, or personal care products?"
+        'question': "Was this fuel, public transit, cab booking, or toll charges?"
     },
-    'entertainment': {
+    'health & medical': {
         'high': [
-            "High entertainment spend! Parks, community events, and library memberships are free or low-cost alternatives.",
-            "Share streaming subscriptions with family/friends — split the cost, keep all the fun!",
-            "Look for discount days at cinemas and museums — often 30-50% off on weekdays."
+            "Medical expense logged. Do you have a health insurance policy? A good cover prevents unexpected financial shocks.",
+            "High medical spending — buy generic medicines instead of branded ones, they are 50-80% cheaper and have the same efficacy."
         ],
         'normal': [
-            "Entertainment tracked! Healthy spending on recreation keeps you refreshed and productive.",
-            "Good balance on fun spending! Just set a monthly cap to avoid drift.",
-            "Nice! Enjoying life within budget is the goal — you're doing it right."
+            "Health expense tracked. Preventive care, regular exercise, and healthy eating are the best free healthcare investments.",
+            "Smart health spend. Regular checkups can catch issues early, saving massive future medical bills."
         ],
-        'question': "Was this movies, dining out, events, sports, or a hobby expense?"
+        'question': "Was this medicines, doctor consultation, wellness, or tests?"
     },
-    'education': {
+    'education & tuition': {
         'high': [
-            "Education investment noted! Check free alternatives: YouTube, Coursera free tier, library resources — same knowledge for free.",
-            "High education spend? Look for scholarships, employer reimbursements, or government schemes.",
-            "Online courses are often 50-80% cheaper than in-person classes with similar quality."
+            "Self-investment has the best ROI! However, check for free educational materials on YouTube, Coursera, or library books first.",
+            "High course fees? Look for group enrollment discounts, scholarships, or employer reimbursement."
         ],
         'normal': [
-            "Education expense logged — investing in yourself always has the best ROI!",
-            "Learning pays! Look for group discounts or bundle deals on courses.",
-            "Great habit! Many skills can be self-taught free via YouTube and open-source platforms."
+            "Education tracked! Developing new skills pays off majorly in career growth and earning potential.",
+            "Great habit. Keep investing in certifications and books to stay ahead professionally."
         ],
-        'question': "Was this a course fee, books, exam fee, or professional certification?"
+        'question': "Is this school/college fee, certification course, books, or exam fee?"
     },
-    'other': {
+    'entertainment & leisure': {
         'high': [
-            "High 'Other' expenses — consider breaking these into specific categories for better tracking.",
-            "Miscellaneous spending is hard to control. Try assigning specific categories to each expense.",
-            "The more specific your categories, the better your financial insights and control."
+            "High leisure spending! Parks, community events, and board games are great free or low-cost alternatives.",
+            "Watch out for lifestyle creep. Try setting a strict weekend budget for movies and events."
         ],
         'normal': [
-            "Expense logged! Using specific categories gives you more actionable financial insights.",
-            "Good tracking! Try to categorize expenses specifically for better monthly analysis.",
-            "Nice! Consistent tracking, even of misc expenses, builds great financial awareness."
+            "Leisure expense logged. Recharging is vital for work-life balance — as long as it's budgeted!",
+            "Good balance on fun spending! Enjoying life within your limit is the goal."
         ],
-        'question': "Can you add more details in the note so we can track this better?"
+        'question': "Was this movie tickets, concert, event, or hobby costs?"
+    },
+    'shopping & apparel': {
+        'high': [
+            "Shopping is high! Try the 48-hour rule: wait 2 days before any impulse purchase to see if you still need it.",
+            "High shopping! Stick to a list and avoid sales sections unless you actually planned to buy the item."
+        ],
+        'normal': [
+            "Shopping logged. Buying off-season clothes or using cashback apps is a smart shopping technique.",
+            "Nice. A sale is only a discount if you had the item on your list already!"
+        ],
+        'question': "Was this clothes, shoes, electronics, or home decor?"
+    },
+    'travel & vacation': {
+        'high': [
+            "High travel cost! Book flights in advance, travel during off-peak seasons, and set up fare alerts to save.",
+            "Vacation expense tracked. Create a separate monthly savings pot for travel so it doesn't hurt your main budget."
+        ],
+        'normal': [
+            "Travel logged. Hope you had a great trip! Budgeting for travel in advance is the smart way to explore.",
+            "Safe travels! Allocating a travel fund keeps your regular monthly finances safe."
+        ],
+        'question': "Is this tickets booking, hotel stay, tour package, or local transport?"
+    },
+    'emi, loans & debt': {
+        'high': [
+            "Debt payments are high. Try the debt avalanche method: focus extra payments on the loan with the highest interest rate.",
+            "Avoid taking high-interest personal or consumer loans. Focus on clearing credit card balances first."
+        ],
+        'normal': [
+            "EMI payment logged. Paying loans on time is critical to maintaining a healthy credit score.",
+            "Debt payment tracked. Staying consistent with repayments keeps interest costs from compounding."
+        ],
+        'question': "Was this home loan, car loan, student loan, or credit card repayment?"
+    },
+    'investments & savings': {
+        'high': [
+            "Incredible! Investing your money is the single best way to achieve financial independence early.",
+            "Excellent savings rate! Your future self will thank you for compounding this money."
+        ],
+        'normal': [
+            "Savings logged! Automating your mutual fund SIPs ensures you pay yourself first before spending.",
+            "Great job. Consistency beats amount when it comes to investing regularly."
+        ],
+        'question': "Was this mutual funds, stocks, PPF, gold, or emergency fund?"
+    },
+    'gifts & donations': {
+        'high': [
+            "Very generous! Consider setting a yearly gift budget so birthdays and festive seasons don't surprise your wallet.",
+            "Donations tracked. Ensure you get 80G tax certificates for eligible donations to claim tax benefits."
+        ],
+        'normal': [
+            "Gifts logged. Celebrating loved ones and helping communities is a wonderful use of money.",
+            "Generosity tracked. Sticking to a gift budget keeps your own financial goals on track."
+        ],
+        'question': "Was this birthday gift, wedding gift, charity, or festive donation?"
+    },
+    'personal care & wellness': {
+        'high': [
+            "High wellness spend! Look for gym membership discounts, or buy wellness/skincare products during seasonal sales.",
+            "Self-care is important, but watch out for premium salon markups. Look for local quality alternatives."
+        ],
+        'normal': [
+            "Wellness spend tracked. Investing in physical and mental wellness is always a good idea.",
+            "Nice. Budgeting for grooming and self-care keeps you feeling your best."
+        ],
+        'question': "Was this salon visit, cosmetics, spa, or gym subscription?"
+    },
+    'pets & animal care': {
+        'high': [
+            "Pet costs can add up! Save on vet bills with regular checkups, and buy pet food in bulk online.",
+            "Furry friends are family! Just watch out for expensive pet accessories that they might not actually need."
+        ],
+        'normal': [
+            "Pet care logged. Keeping your pet healthy and happy is a worthy budget item.",
+            "Pet supplies tracked. They deserve the best care within a reasonable budget!"
+        ],
+        'question': "Was this pet food, vet consultation, grooming, or pet toys?"
+    },
+    'maintenance & repairs': {
+        'high': [
+            "Repairs logged. Regular servicing of appliances and vehicles prevents massive emergency breakdown costs.",
+            "High repair bill! Consider getting AMC (Annual Maintenance Contracts) for critical appliances."
+        ],
+        'normal': [
+            "Maintenance tracked. Keeping your car or house in top shape preserves its value over time.",
+            "Smart maintenance. Minor fixes now prevent major replacement costs down the road."
+        ],
+        'question': "Was this car/bike service, house repair, appliance servicing, or plumbing?"
+    },
+    'business & office': {
+        'high': [
+            "Business expense logged. Keep all receipts separate and organized to claim tax deductions at the end of the year.",
+            "Evaluate business software tools quarterly. Cancel unused SaaS tools to prevent cost leaks."
+        ],
+        'normal': [
+            "Office expense logged. Investing in tools that increase productivity is a smart move.",
+            "Business spend tracked. Keep business and personal finances separate for tax safety."
+        ],
+        'question': "Was this office rent, software, advertising, or stationery?"
+    },
+    'subscriptions & streaming': {
+        'high': [
+            "Subscription creep! Audit your Netflix, Spotify, gym and newsletter subscriptions. Cancel anything unused for 30 days.",
+            "High subscription costs! Look for family plans to share with friends and split the monthly bill."
+        ],
+        'normal': [
+            "Subscription tracked. Automating recurring payments avoids service disruptions.",
+            "Balanced subscriptions. Only pay for the entertainment and tools you actually use."
+        ],
+        'question': "Was this video streaming, music, software subscription, or gym?"
+    },
+    'miscellaneous': {
+        'high': [
+            "High miscellaneous spend! Try to break these down into specific categories next time for better analysis.",
+            "Miscellaneous spending is hard to control. Giving each expense a clear category provides better control."
+        ],
+        'normal': [
+            "Misc expense logged. Sticking to defined categories yields the most actionable dashboard insights.",
+            "Logged. Adding comments/notes to misc expenses helps you remember what they were for."
+        ],
+        'question': "Can you add a detailed note so we know what this expense was for?"
     }
 }
 

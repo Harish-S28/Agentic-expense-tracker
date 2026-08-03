@@ -1,263 +1,136 @@
 # 💰 SpendLog AI – Agentic Personal Expense Tracker
 
-An AI-powered expense tracking application that helps users manage their finances intelligently using **Google Gemini AI**. The application not only records daily expenses but also analyzes spending habits, provides personalized financial insights, recommends budgeting strategies, and answers finance-related questions through an AI chatbot.
+SpendLog AI is a next-generation personal expense tracker featuring a smart budget planner, advanced data analytics, and an integrated agentic AI financial advisor powered by **Google Gemini 1.5 Flash** (with fallback to an intelligent rule-based expert system). 
+
+It is designed with dual-database support—**PostgreSQL** for persistent production deployments and **SQLite** for instant local development—and features a secure multi-user authentication system.
 
 ---
 
-## 🌐 Live Demo
+## 🚀 Key Features
 
-🚀 **Try the Live Demo:** [Agentic Expense Tracker](https://agentic-expense-tracker.onrender.com)
-
-## 🚀 Features
-
-### 📊 Expense Management
-
-* Add, edit, and delete expenses
-* Categorize expenses (Food, Travel, Shopping, Bills, Entertainment, etc.)
-* Track daily and monthly spending
-* View complete expense history
-
-### 💵 Smart Budget Planner
-
-* Set monthly budget
-* Automatic daily budget calculation
-* Carry-forward remaining budget to the next day
-* Real-time budget tracking
-
-### 🤖 AI Financial Assistant
-
-* Powered by **Google Gemini API**
-* Personalized financial advice
-* Spending pattern analysis
-* Budget improvement suggestions
-* Profession-based recommendations
-* Interactive AI chatbot for finance-related queries
-
-### 👤 Personalized User Profiles
-
-Supports multiple professions such as:
-
-* Student
-* Employee
-* Business Person
-* Doctor
-* Parent
-* Freelancer
-* Others
-
-The AI customizes recommendations based on the user's profession.
-
-### 📈 Financial Analytics
-
-* Total expenses overview
-* Category-wise spending
-* Monthly summaries
-* Smart financial insights
-* Budget utilization analysis
-
-### 🔄 Intelligent Fallback
-
-If the Gemini API is unavailable, the application automatically switches to a built-in rule-based AI system, ensuring uninterrupted functionality.
+* **🔒 Secure Multi-User Auth**: Register & login securely. All expenses, budgets, and profile details are strictly isolated per user account.
+* **🍕 Everyday Society Categories**: 19 pre-configured everyday spending categories complete with matching emoji pills for premium visual feedback.
+* **💵 Smart Budget Carry-Over**: Set monthly limits and track daily dynamic limits that automatically carry forward savings or deficits.
+* **🤖 Agentic AI Advisor**: Chat with your financial assistant or get instant budget feedback, contextual analysis, and saving tips tailored to your profession.
+* **📊 Visual Rich Analytics**: View category doughnut charts, monthly bar charts, and tabular breakdowns of your spending habits in a gorgeous responsive dark mode.
+* **☁️ Ephemeral-Proof Cloud DB**: Fully compatible with PostgreSQL on Render or Railway, solving the issue of data being lost on container restart.
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-### Frontend
-
-* HTML5
-* CSS3
-* Vanilla JavaScript
-
-### Backend
-
-* Python
-* Flask
-
-### Database
-
-* SQLite
-
-### AI Integration
-
-* Google Gemini API
-* Rule-Based AI Engine (Fallback)
-
-### Deployment
-
-* Railway
-* Gunicorn
+* **Frontend**: HTML5, Vanilla CSS3 (Sleek Glassmorphic Dark UI), JavaScript (ES6+), Chart.js
+* **Backend**: Python 3.9+, Flask, Werkzeug (Security & Password Hashing), Gunicorn
+* **Database**: PostgreSQL (Production) / SQLite (Development)
+* **AI Engine**: Google Gemini API via `google-generativeai` python client
 
 ---
 
-# 📂 Project Structure
+## ⚙️ Installation & Local Setup
 
-```text
-Agentic-expense-tracker/
-│
-├── static/
-│   ├── css/
-│   └── js/
-│
-├── templates/
-│   └── index.html
-│
-├── app.py
-├── ai_agent.py
-├── requirements.txt
-├── Procfile
-├── railway.toml
-├── README.md
-└── database.db
-```
-
----
-
-# ⚙️ Installation
-
-## Clone the Repository
-
+### 1. Clone the Project
 ```bash
 git clone https://github.com/Harish-S28/Agentic-expense-tracker.git
-```
-
-```bash
 cd Agentic-expense-tracker
 ```
 
----
-
-## Create Virtual Environment
-
-### Windows
-
+### 2. Configure a Virtual Environment
 ```bash
+# Windows
 python -m venv venv
 venv\Scripts\activate
-```
 
-### Linux / macOS
-
-```bash
+# Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
 ```
 
----
-
-## Install Dependencies
-
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Configure Gemini API
-
-Create a `.env` file in the project root.
-
+### 4. Setup Environment Variables
+Create a `.env` file in the root of the project:
 ```env
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+# Optional: Gemini API Key for AI Insights
+GEMINI_API_KEY=your_gemini_api_key
+
+# Optional: Set this to connect to PostgreSQL (leave empty to use SQLite)
+# DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+
+# Flask Session Secret Key
+SECRET_KEY=any_random_secure_string
 ```
 
-If no API key is provided, the application automatically uses its built-in rule-based AI.
-
----
-
-## Run the Application
-
+### 5. Launch the Application
 ```bash
 python app.py
 ```
+Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your web browser.
 
-Open your browser and visit:
+---
 
+## ☁️ Deployment Guide
+
+### Deploying to Render (Ephemerality-Proof Database)
+
+Render web services use ephemeral disks, which delete local SQLite databases on container reboot. SpendLog AI solves this using a **Render Blueprint** that links your web app to a persistent cloud PostgreSQL database automatically.
+
+1. **Fork this repository** on GitHub.
+2. In the **Render Dashboard**, click **New +** and select **Blueprint**.
+3. Link your GitHub repository.
+4. Render will parse the `render.yaml` configuration and provision:
+   * A persistent PostgreSQL database (`spendlog-db`).
+   * A Python web service (`spendlog-ai`) running Gunicorn.
+5. In the Web Service settings under **Environment**, define your `GEMINI_API_KEY` (if you want AI advisory features).
+6. Click **Deploy**. Render will auto-wire the `DATABASE_URL` from the database to your web app!
+
+---
+
+## 📂 Database Schema
+
+```mermaid
+erDiagram
+    users {
+        int id PK
+        string email UNIQUE
+        string password_hash
+        timestamp created_at
+    }
+    expenses {
+        int id PK
+        int user_id FK
+        string date
+        double amount
+        string category
+        text note
+        timestamp created_at
+    }
+    user_profile {
+        int id PK
+        int user_id FK
+        string name
+        string profession
+        double income
+        timestamp updated_at
+    }
+    budget_settings {
+        int id PK
+        int user_id FK
+        string month
+        double monthly_budget
+        timestamp updated_at
+    }
+
+    users ||--o{ expenses : "logs"
+    users ||--|| user_profile : "has"
+    users ||--o{ budget_settings : "sets"
 ```
-https://agentic-expense-tracker.onrender.com
-```
 
 ---
 
-# 📡 Application Workflow
-
-1. User creates a profile.
-2. User sets a monthly budget.
-3. User records daily expenses.
-4. Expenses are stored in SQLite.
-5. Dashboard updates analytics instantly.
-6. AI analyzes spending behavior.
-7. Personalized recommendations are generated.
-8. Users can interact with the AI chatbot for financial guidance.
-
----
-
-# 🧠 AI Capabilities
-
-* Spending habit analysis
-* Budget optimization
-* Expense categorization
-* Personalized financial advice
-* Profession-aware recommendations
-* Smart budgeting tips
-* Financial question answering
-* Rule-based fallback intelligence
-
----
-
-# 🎯 Future Enhancements
-
-* Voice-enabled AI assistant
-* Receipt OCR scanning
-* Bank account integration
-* UPI transaction import
-* Email expense summaries
-* Multi-user authentication
-* Cloud database support
-* Mobile application
-* Expense prediction using Machine Learning
-
----
-
-# 📷 Screenshots
-
-Add screenshots of:
-
-* Dashboard
-* Expense Tracker
-* Budget Planner
-* AI Insights
-* AI Chatbot
-* Analytics Page
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push the branch
-5. Create a Pull Request
-
----
-
-# 📄 License
-
-This project is developed for educational and learning purposes.
-
----
-
-# 👨‍💻 Author
-
+## 👨‍💻 Author
 **Harish**
-
-B.Tech – Artificial Intelligence & Data Science
-
-Passionate about AI, Agentic Systems, Machine Learning, Full Stack Development, and Intelligent Automation.
-
----
-
-## ⭐ If you found this project useful, consider giving it a Star on GitHub!
+* B.Tech – Artificial Intelligence & Data Science
+* Passionate about AI, Agentic Systems, Full Stack Development, and Intelligent Automation.

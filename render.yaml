@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: spendlog-ai
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: spendlog-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+
+databases:
+  - name: spendlog-db
+    plan: free

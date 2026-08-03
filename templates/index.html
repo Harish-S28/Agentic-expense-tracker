@@ -15,12 +15,88 @@
 <!-- ═══════════════════════════════════════════════════════
      PROFILE SETUP MODAL (first launch)
 ══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════
+     AUTHENTICATION MODAL (Register / Login)
+══════════════════════════════════════════════════════════ -->
+<div id="auth-modal" class="modal-overlay" style="display:none">
+  <div class="modal-card">
+    <div class="modal-hero">
+      <div class="modal-hero-icon">🔒</div>
+      <h2>SpendLog AI</h2>
+      <p>Securely manage and analyze your personal finances with AI.</p>
+    </div>
+    
+    <!-- Tab Controls -->
+    <div class="auth-tabs" style="display: flex; border-bottom: 2px solid #21283e; margin-bottom: 20px;">
+      <button class="auth-tab-btn active" id="tab-btn-login" style="flex: 1; padding: 12px; background: none; border: none; color: #f3f4f6; font-weight: 600; cursor: pointer; border-bottom: 3px solid #6366f1;">Login</button>
+      <button class="auth-tab-btn" id="tab-btn-register" style="flex: 1; padding: 12px; background: none; border: none; color: #9ca3af; font-weight: 600; cursor: pointer;">Register</button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Login View -->
+      <div id="auth-login-view">
+        <div class="form-group">
+          <label for="l-email">Email Address</label>
+          <input type="email" id="l-email" placeholder="e.g. name@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label for="l-password">Password</label>
+          <input type="password" id="l-password" placeholder="••••••••" required />
+        </div>
+        <button class="btn-primary full-width" id="btn-login-submit">
+          Log In →
+        </button>
+      </div>
+
+      <!-- Register View -->
+      <div id="auth-register-view" style="display:none">
+        <div class="form-group">
+          <label for="r-name">Your Full Name</label>
+          <input type="text" id="r-name" placeholder="e.g. Harish" maxlength="50" required />
+        </div>
+        <div class="form-group">
+          <label for="r-email">Email Address</label>
+          <input type="email" id="r-email" placeholder="e.g. name@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label for="r-password">Password</label>
+          <input type="password" id="r-password" placeholder="Min 6 characters" required />
+        </div>
+        <div class="form-group">
+          <label>Your Profession</label>
+          <div class="profession-grid" id="register-profession-grid">
+            <button class="prof-btn" data-val="Student">🎓 Student</button>
+            <button class="prof-btn" data-val="Doctor">👨‍⚕️ Doctor</button>
+            <button class="prof-btn" data-val="Business">💼 Business</button>
+            <button class="prof-btn" data-val="Parent">👨‍👩‍👧 Parent</button>
+            <button class="prof-btn" data-val="Employee">🏢 Employee</button>
+            <button class="prof-btn" data-val="Other">✨ Other</button>
+          </div>
+          <input type="hidden" id="r-profession" />
+        </div>
+        <div class="form-group">
+          <label for="r-income">Monthly Income (₹) <span class="muted">— optional</span></label>
+          <input type="number" id="r-income" placeholder="e.g. 50000" min="0" />
+        </div>
+        <button class="btn-primary full-width" id="btn-register-submit">
+          Create Account & Start →
+        </button>
+      </div>
+      
+      <div id="auth-msg" class="msg" style="display:none; margin-top:16px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROFILE EDIT MODAL (Update settings)
+══════════════════════════════════════════════════════════ -->
 <div id="profile-modal" class="modal-overlay" style="display:none">
   <div class="modal-card">
     <div class="modal-hero">
-      <div class="modal-hero-icon">🤖</div>
-      <h2>Welcome to SpendLog AI</h2>
-      <p>Your personal AI financial assistant. Let's set up your profile to give you personalized advice.</p>
+      <div class="modal-hero-icon">👤</div>
+      <h2>Update Profile</h2>
+      <p>Configure your details to help the AI advisor customize suggestions.</p>
     </div>
     <div class="modal-body">
       <div class="form-group">
@@ -43,10 +119,10 @@
         <label for="p-income">Monthly Income (₹) <span class="muted">— optional</span></label>
         <input type="number" id="p-income" placeholder="e.g. 25000" min="0" />
       </div>
-      <button class="btn-primary full-width" id="btn-save-profile">
-        Get Started →
-      </button>
-      <p class="modal-note">You can update your profile anytime from the sidebar.</p>
+      <div style="display:flex; gap:12px;">
+        <button class="btn-ghost" id="btn-close-profile" style="flex:1">Cancel</button>
+        <button class="btn-primary" id="btn-save-profile" style="flex:2">Save Changes</button>
+      </div>
     </div>
   </div>
 </div>
@@ -95,7 +171,10 @@
       <div class="profile-name" id="profile-name">Loading…</div>
       <div class="profile-prof" id="profile-prof">Setting up…</div>
     </div>
-    <button class="profile-edit-btn" id="btn-edit-profile" title="Edit Profile">✏️</button>
+    <div class="profile-actions" style="display: flex; gap: 6px; align-items: center;">
+      <button class="profile-edit-btn" id="btn-edit-profile" title="Edit Profile">✏️</button>
+      <button class="profile-logout-btn" id="btn-logout" title="Log Out" style="background: none; border: none; cursor: pointer; font-size: 16px; padding: 4px;">🚪</button>
+    </div>
   </div>
 </aside>
 
