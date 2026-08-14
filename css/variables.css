@@ -1,0 +1,70 @@
+:root {
+  /* Color Palette - Bento Grid Dark Theme */
+  --bg-primary: #09090b;
+  --bg-secondary: #0f0f12;
+  --bg-card: #121215;
+  --bg-card-hover: #18181c;
+  --bg-card-glass: rgba(18, 18, 21, 0.78);
+  --bg-sidebar: #09090b;
+  --bg-topbar: rgba(9, 9, 11, 0.85);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(139, 92, 246, 0.35);
+  --border-cyan: rgba(34, 211, 238, 0.35);
+
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-dark: #09090b;
+
+  /* FinTech & AI Accents */
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  
+  --cyan: #22d3ee;
+  --cyan-deep: #06b6d4;
+  --cyan-glow: rgba(34, 211, 238, 0.25);
+
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.2);
+  
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.2);
+  
+  --danger: #f43f5e;
+  --danger-glow: rgba(244, 63, 94, 0.2);
+
+  --info: #3b82f6;
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Radii - Bento Modular Geometry */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows & Bento Inset Highlights */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --glow-agent: 0 0 35px rgba(139, 92, 246, 0.2), 0 0 20px rgba(34, 211, 238, 0.15);
+  --glow-cyan: 0 0 25px rgba(34, 211, 238, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-indexes */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-modal: 500;
+  --z-toast: 1000;
+}
