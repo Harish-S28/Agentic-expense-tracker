@@ -1,0 +1,6 @@
+{
+  "name": "SpendLog AI - Agentic Expense Tracker",
+  "description": "A futuristic AI-powered FinTech expense tracking dashboard with intelligent financial agent, spending analytics, budget and goal tracking, and backend-ready service architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
